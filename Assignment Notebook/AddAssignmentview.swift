@@ -31,8 +31,7 @@ struct AddAssignmentview: View {
                 .navigationBarTitle("Add New Assignment Item", displayedMode: .inline)
                 .navigationBarItems(trailing: Button("Save") {
                     if course.count > 0 && description.count > 0 {
-                        let item = assignmentItem(id: UUID(), course: course,
-                                                  description: description, dueDate: dueDate)
+let item = AssignmentItem(id: UUID(), course: course, description: description, dueDate: dueDate)
                         assignmentList.items.append(item)
                         presentationMode.wrappedValue.dismiss()
                     }

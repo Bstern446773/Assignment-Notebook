@@ -34,18 +34,18 @@ struct ContentView: View {
                                          Color.green.opacity(0.7) :
                                             (item.course == "English" ?
                                              Color.purple.opacity(0.7) :
-                                                Color.gray.opacity(0.7)))));)
-                        .cornerRadius(8)
-                        .padding(.vertical, 4)
-                        .shadow(radius: 2)
-                    }
-                    .onMove (perform: { indices;, newOffset In
+                                                Color.gray.opacity(0.7))))
+                            .cornerRadius(8)
+                            .padding(.vertical, 4)
+                            .shadow(radius: 2)
+                        }
+                                   onMove (perform: { indices; , newOffset In
                         assignmentList.items.move(fromOffsets: indices, toOffset:
                                                     newOffset)
                     })
                     .onDelete (perform: { indexSet in}
                                assignmentList.items.remove(atOffsets: indexSet)
-                               })
+                               };)
                 }
                 .sheet(ispresented: $showingAddAssignmentView, content: {
                     AddAssignmentview(assignmentList: assignmentList)
@@ -58,12 +58,12 @@ struct ContentView: View {
                     })
             }
             .onAppear {
-                UITableView.appearance().backgroundColor = .clear
+                UITableView.appearance().backgroundColor = .clear {
+                }
             }
         }
     }
-}
-structContentView_Previews: PreviewProvider {
+struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }

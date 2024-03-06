@@ -10,7 +10,7 @@ class AssignmentList: ObservableObject {
     @Published var items : [AssignmentItem] {
         didSet {
             let eencoder = JSONEncoder()
-            if let encoded = try? Encoder.encode(items) {
+            if let encoded = try? encoder.encode(items) {
                 UserDefaults.standard.set(encoded, forKey: "data")
             }
         }
