@@ -39,11 +39,16 @@ struct ContentView: View {
                             .padding(.vertical, 4)
                             .shadow(radius: 2)
                         }
-                                   onMove (perform: { indices; , newOffset In
+                    }
+            }
+                                   
+                                   
+                            .onMove (perform:
+                                        { indices; , newOffset In
                         assignmentList.items.move(fromOffsets: indices, toOffset:
                                                     newOffset)
                     })
-                    .onDelete (perform: { indexSet in}
+                                    .onDelete (perform: { indexSet in},
                                assignmentList.items.remove(atOffsets: indexSet)
                                };)
                 }
@@ -57,12 +62,13 @@ struct ContentView: View {
                         Image(systemName: "plus")
                     })
             }
-            .onAppear {
+                    .onAppear {
+                    }
                 UITableView.appearance().backgroundColor = .clear {
                 }
             }
         }
-    }
+                                   
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
